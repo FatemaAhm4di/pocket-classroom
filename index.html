@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EduCaps</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="Icons" href="images/favicon.png">
+</head>
+
+<body><!-- Navbar -->
+<nav class="navbar navbar-dark bg-dark sticky-top shadow-lg">
+  <div class="container d-flex justify-content-between align-items-center">
+    <a class="navbar-brand d-flex align-items-center" href="#" id="app-logo">
+      <img src="images/logo.png" alt="Logo" width="50" height="50">
+      <span class="text-gradient ms-2 fw-bold d-none d-md-inline">EduCaps</span>
+    </a>
+
+    <div class="d-none d-md-flex align-items-center gap-3">
+      <ul class="navbar-nav flex-row">
+        <li class="nav-item mx-2">
+          <a class="nav-link" href="#" data-target="library-section">Library</a>
+        </li>
+        <li class="nav-item mx-2">
+          <a class="nav-link" href="#" data-target="author-section">Author</a>
+        </li>
+        <li class="nav-item mx-2">
+          <a class="nav-link" href="#" data-target="learn-section">Learn</a>
+        </li>
+      </ul>
+
+      <!-- دکمه لایت/دارک مود اضافه شد -->
+      <button class="btn btn-outline-light btn-sm theme-toggle ms-2">
+        <i class="bi bi-moon"></i>
+      </button>
+    </div>
+
+    <div class="d-md-none d-flex align-items-center gap-2">
+      <div class="d-flex gap-1">
+        <a class="btn btn-dark btn-sm nav-icon" href="#" data-target="library-section" data-text="Library">
+          <i class="bi bi-journal-bookmark"></i>
+        </a>
+        <a class="btn btn-dark btn-sm nav-icon" href="#" data-target="author-section" data-text="Author">
+          <i class="bi bi-pencil-square"></i>
+        </a>
+        <a class="btn btn-dark btn-sm nav-icon" href="#" data-target="learn-section" data-text="Learn">
+          <i class="bi bi-mortarboard"></i>
+        </a>
+      </div>
+
+      <!-- دکمه لایت/دارک مود موبایل هم اضافه شد -->
+      <button class="btn btn-outline-light btn-sm theme-toggle">
+        <i class="bi bi-moon"></i>
+      </button>
+    </div>
+  </div>
+</nav>
+
+
+  <main class="container py-4">
+    <section id="library-section" class="section">
+      <!-- Hero -->
+      <div class="hero-section py-4 mb-5">
+        <div class="row align-items-center flex-column-reverse flex-md-row">
+          <div class="col-md-6 text-center text-md-start mb-4 mb-md-0">
+            <h1 class="display-5 fw-bold mb-3">Welcome to <span class="text-gradient">EduCaps</span></h1>
+            <p class="lead mb-4">Create, study, and share your own learning capsules anywhere, anytime.</p>
+            <div class="d-flex justify-content-center justify-content-md-start gap-2">
+              <button class="btn btn-primary btn-lg" id="cta-start">Start Learning</button>
+              <button class="btn btn-outline-light btn-lg" id="cta-create">Create Capsule</button>
+            </div>
+          </div>
+          <div class="col-md-6 text-center">
+            <img src="images/hero.png" alt="Learning Illustration" class="img-fluid" style="max-height: 400px;">
+          </div>
+        </div>
+      </div>
+
+      <!-- Library Content -->
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="h3 fw-bold">Your Capsules</h2>
+        <div>
+          <button class="btn btn-outline-light me-2" id="import-json-btn">
+            <i class="bi bi-upload"></i> Import JSON
+          </button>
+          <button class="btn btn-primary" id="create-new-btn">
+            <i class="bi bi-plus-lg"></i> New Capsule
+          </button>
+        </div>
+      </div>
+
+      <div id="library-grid" class="row g-4"></div>
+
+      <div id="library-empty" class="text-center py-5 d-none">
+        <i class="bi bi-journal-text" style="font-size: 4rem; opacity: 0.6;"></i>
+        <h4 class="mb-3">You don't have any capsules yet</h4>
+        <button class="btn btn-primary btn-lg" id="create-first-btn">
+          <i class="bi bg- bi-plus-lg"></i> Create your first capsule
+        </button>
+      </div>
+    </section>
+
+    <!-- AUTHOR -->
+    <section id="author-section" class="section" hidden>
+      <h2 class="h3 fw-bold mb-4">Author Mode</h2>
+      <div id="author-forms"></div>
+    </section>
+
+    <!-- LEARN -->
+    <section id="learn-section" class="section" hidden>
+      <div id="learn-content"></div>
+    </section>
+  </main>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js" type="module"></script>
+  <script src="js/storage.js" type="module"></script>
+  <script src="js/library.js" type="module"></script>
+  <script src="js/author.js" type="module"></script>
+  <script src="js/learn.js" type="module"></script>
+  <script>
+    document.addEventListener('click', (e) => {
+      const iconBtn = e.target.closest('.nav-icon');
+      if (!iconBtn) return;
+
+      e.preventDefault();
+
+      const text = iconBtn.dataset.text;
+      iconBtn.innerHTML = text;
+      iconBtn.classList.add('px-2');
+
+      setTimeout(() => {
+        const iconMap = {
+          'Library': 'bi-journal-bookmark',
+          'Author': 'bi-pencil-square',
+          'Learn': 'bi-mortarboard'
+        };
+        iconBtn.innerHTML = `<i class="bi ${iconMap[text]}"></i>`;
+        iconBtn.classList.remove('px-2');
+      }, 2000);
+
+      const target = iconBtn.dataset.target;
+      window.showSection?.(target);
+    });
+
+
+    function updateThemeIcons() {
+  const isLight = document.body.classList.contains('light-mode');
+  document.querySelectorAll('.theme-toggle i').forEach(icon => {
+    icon.className = isLight ? 'bi bi-sun' : 'bi bi-moon';
+  });
+}
+
+function toggleTheme() {
+  document.body.classList.toggle('light-mode');
+  localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
+  updateThemeIcons();
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  if (localStorage.getItem('theme') === 'light') {
+    document.body.classList.add('light-mode');
+  }
+  updateThemeIcons();
+
+  document.querySelectorAll('.theme-toggle').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault();
+      toggleTheme();
+    });
+  });
+});
+
+</script>
+</body>
+
+</html>
+
+

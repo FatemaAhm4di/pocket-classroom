@@ -1,0 +1,36 @@
+{
+    "schema": "pocket-classroom/v1",
+    "meta": {
+        "title": "HTML Basics",
+        "subject": "Web Development",
+        "level": "Beginner",
+        "description": "A quick introduction to HTML the structure of every web page",
+        "updatedAt": "2025-10-18T14:30:00.000Z"
+    },
+    "notes": [
+        "HTML stands for HyperText Markup Language.",
+        "Tags define structure like <p>, <h1>, <a> etc."
+    ],
+    "flashcards": [
+        {
+            "question": "What does HTML stand for?",
+            "answer": "HyperText Markup Language"
+        },
+        {
+            "question": "Which tag is used for links?",
+            "answer": "<a>"
+        }
+    ],
+    "quiz": [
+        {
+            "question": "Which tag defines the largest heading?",
+            "options": [
+                "<p>",
+                "<h1>",
+                "<div>",
+                "<head>"
+            ],
+            "correctAnswer": 1
+        }
+    ]
+}

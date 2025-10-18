@@ -1,0 +1,355 @@
+.card-img-top {
+  height: 160px;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+}
+
+.card {
+  background-color: #1e1e2d;
+  color: #e0ffe2;
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  transition:
+    transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    box-shadow 0.3s ease,
+    background-color 0.3s,
+    color 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.35) !important;
+}
+
+.card .btn {
+  transition: all 0.2s ease;
+}
+
+.card .btn:hover {
+  transform: scale(1.02);
+}
+
+body.light-mode {
+  background-color: #e9e3e3;
+  color: #49495c;
+}
+
+body {
+  background-color: #12121d;
+  color: #e0e0ff;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* کارت‌ها در حالت لایت */
+body.light-mode .card {
+  background-color: #f6ecec;
+  color: #212529;
+  border: 1px solid #e0e0e0;
+}
+
+body.light-mode #quiz-tab-content p,
+body.light-mode #quiz-tab-content h5 {
+  color: #212529 !important;
+}
+
+body.light-mode #quiz-tab-content .btn-outline-light {
+  color: #212529 !important;
+  border-color: #ced4da !important;
+}
+
+/* متن‌های  کارت در حالت لایت */
+body.light-mode .card .card-title,
+body.light-mode .card .card-text,
+body.light-mode .card .text-muted {
+  color: #212529 !important;
+}
+
+/*  در حالت لایت */
+body.light-mode .badge.bg-success {
+  background-color: #4ade80 !important;
+  color: #000 !important;
+}
+
+body.light-mode .badge.bg-warning {
+  background-color: #facc15 !important;
+  color: #000 !important;
+}
+
+body.light-mode .badge.bg-danger {
+  background-color: #f87171 !important;
+  color: #000 !important;
+}
+
+body.light-mode .btn-outline-light {
+  color: #535151;
+  border-color: #0b4075;
+}
+
+body.light-mode .btn-outline-light:hover {
+  background-color: #e9ecef;
+  color: #212529;
+}
+
+body.light-mode .navbar {
+  background-color: #d3d0d0 !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+body.light-mode .navbar-brand,
+body.light-mode .nav-link {
+  color: #212529 !important;
+}
+
+body.light-mode .form-control {
+  background-color: #e9e3e3;
+  color: #212529;
+  border-color: #084481;
+}
+
+body.light-mode #library-empty h4 {
+  color: #212529;
+}
+
+body.light-mode #library-empty h4 {
+  color: #212529;
+}
+
+@media (max-width: 767.98px) {
+
+  #library-grid .col-md-6,
+  #library-grid .col-lg-4 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+
+  .card .mt-auto .d-flex {
+    flex-direction: column !important;
+    gap: 0.5rem !important;
+  }
+
+  .card .btn {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  .hero-section {
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+  }
+
+  .hero-section .display-5 {
+    font-size: 1.8rem !important;
+  }
+
+  .hero-buttons .btn {
+    padding: 0.4rem 0.8rem !important;
+    font-size: 0.9rem !important;
+  }
+
+  .container {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  .card-body {
+    padding: 1rem !important;
+  }
+
+  .card-title {
+    font-size: 1.1rem !important;
+  }
+
+  .badge {
+    font-size: 0.75rem !important;
+    padding: 0.3em 0.5em !important;
+  }
+}
+
+#author-forms .form-label {
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+#author-forms .form-control,
+#author-forms .form-select {
+  margin-bottom: 0.75rem;
+}
+
+/* فلش‌کارت‌ها */
+.flashcard-row {
+  background-color: rgba(20, 18, 18, 0.05);
+  padding: 0.75rem;
+  border-radius: 8px;
+  margin-bottom: 0.75rem;
+}
+
+.flashcard-row .form-control {
+  margin-bottom: 0.5rem;
+}
+
+.flashcard-row .col-md-2 {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 0.5rem;
+}
+
+/* کوئیز */
+.quiz-row {
+  background-color: rgba(209, 207, 207, 0.05);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.quiz-row .card-body {
+  padding: 0;
+}
+
+.quiz-row .form-control {
+  margin-bottom: 0.5rem;
+}
+
+.quiz-row .row {
+  margin-bottom: 0.75rem;
+}
+
+.quiz-row .col-md-6 {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+/* دکمه‌های Add/Remove */
+#author-forms .btn-sm {
+  font-size: 0.85rem;
+  padding: 0.25rem 0.5rem;
+}
+
+@media (max-width: 767.98px) {
+
+  .flashcard-row .col-md-5,
+  .flashcard-row .col-md-2 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+
+  .quiz-row .col-md-6 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    margin-bottom: 0.5rem;
+  }
+
+  .quiz-row .mb-2 {
+    margin-bottom: 0.75rem !important;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .navbar {
+    padding: 0.5rem 1rem !important;
+  }
+
+  #app-logo img {
+    margin-right: 0;
+  }
+}
+
+body.light-mode #author-forms *,
+body.light-mode #learn-content * {
+  color: #050506 !important;
+}
+
+body.light-mode #author-forms .form-control,
+body.light-mode #learn-content .form-control {
+  background-color: #faf9f9 !important;
+  border-color: #030303 !important;
+}
+
+body.light-mode #author-forms textarea.form-control {
+  color: #e9ecf0 !important;
+}
+
+/*  Hero Section Animation  */
+.hero-section {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUpHero 0.8s ease forwards;
+}
+
+@keyframes fadeInUpHero {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/*  Card Staggered Animation  */
+#library-grid .col-md-6 {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+#library-grid .col-md-6.visible {
+  animation: fadeInUpCard 0.6s ease forwards;
+}
+
+#library-grid .col-md-6:nth-child(1).visible {
+  animation-delay: 0.1s;
+}
+
+#library-grid .col-md-6:nth-child(2).visible {
+  animation-delay: 0.2s;
+}
+
+#library-grid .col-md-6:nth-child(3).visible {
+  animation-delay: 0.3s;
+}
+
+#library-grid .col-md-6:nth-child(4).visible {
+  animation-delay: 0.4s;
+}
+
+#library-grid .col-md-6:nth-child(5).visible {
+  animation-delay: 0.5s;
+}
+
+#library-grid .col-md-6:nth-child(6).visible {
+  animation-delay: 0.6s;
+}
+
+@keyframes fadeInUpCard {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+body:not(.light-mode) #author-forms .flashcard-row,
+body:not(.light-mode) #author-forms .quiz-row {
+  background-color: #1e1e2d !important;
+  border: 3px solid #3a3a4d !important;
+  color: #fdfdff !important;
+}
+
+body:not(.light-mode) #author-forms .flashcard-row .form-control,
+body:not(.light-mode) #author-forms .quiz-row .form-control {
+  background-color: #52525a !important;
+  color: #fcfcff !important;
+  border-color: #373755 !important;
+}
+
+body:not(.light-mode) #author-forms .form-label {
+  color: #ffffff !important;
+}
+
+body {
+  background-color: #12121d;
+  color: #e0e0ff;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.light-mode {
+  background-color: #f8f9fa;
+  color: #212529;
+}
